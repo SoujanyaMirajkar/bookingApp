@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Services</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let service of services">
+
+    <ion-card-header>
+      <ion-card-title>{{ service.name }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Price: ₹{{ service.price }}
+
+      <ion-button expand="block" routerLink="/book">
+        Book Now
+      </ion-button>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

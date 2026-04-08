@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Bookings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- If bookings exist -->
+  <ion-list *ngIf="bookings.length > 0">
+
+    <ion-item *ngFor="let b of bookings; let i = index">
+      <ion-label>
+        <h2>{{ b.name }}</h2>
+        <p>{{ b.date }}</p>
+      </ion-label>
+
+      <ion-button color="danger" (click)="delete(i)">
+        Delete
+      </ion-button>
+    </ion-item>
+
+  </ion-list>
+
+  <!-- If no bookings -->
+  <div *ngIf="bookings.length === 0" class="ion-text-center">
+    <p>No bookings yet</p>
+  </div>
+
+</ion-content>
